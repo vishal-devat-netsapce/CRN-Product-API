@@ -1,5 +1,4 @@
 ﻿using DTOModel;
-using DTOModels.Response;
 using Microsoft.AspNetCore.Http;
 using Operation;
 using Microsoft.AspNetCore.Mvc;
@@ -7,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace API.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
@@ -18,8 +18,16 @@ namespace API.Controllers
             _auth= auth;
         }
 
+        [HttpPost("Registration")]
+        [AllowAnonymous]
+        public async Task<ApiResponse> UserRegistration([FromForm] AddUserDTO userDTO)
+        {
+            return await _auth.AddUser(userDTO);
+        }
+
 
         [HttpPost("Login")]
+      
         [AllowAnonymous]
         public async Task<ApiResponse>  Login([FromForm] LoginRequestDto loginDTO) {
             try

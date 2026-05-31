@@ -1,0 +1,274 @@
+2026-05-31 14:51:35.016 +05:30 [INF] User profile is available. Using 'C:\Users\thaku\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-31 14:51:36.179 +05:30 [INF] Now listening on: https://localhost:7087
+2026-05-31 14:51:36.182 +05:30 [INF] Now listening on: http://localhost:5042
+2026-05-31 14:51:36.638 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-31 14:51:36.653 +05:30 [INF] Hosting environment: Development
+2026-05-31 14:51:36.656 +05:30 [INF] Content root path: D:\Employee\Product_CRN\ProductSolution\Product
+2026-05-31 14:51:38.337 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/swagger/index.html - null null
+2026-05-31 14:51:39.013 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/swagger/index.html - 200 null text/html;charset=utf-8 707.293ms
+2026-05-31 14:51:39.048 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-31 14:51:39.049 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/_vs/browserLink - null null
+2026-05-31 14:51:39.070 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/_framework/aspnetcore-browser-refresh.js - 200 13742 application/javascript; charset=utf-8 23.2896ms
+2026-05-31 14:51:39.200 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/_vs/browserLink - 200 null text/javascript; charset=UTF-8 151.3921ms
+2026-05-31 14:51:39.357 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/swagger/v1/swagger.json - null null
+2026-05-31 14:51:39.435 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 79.6762ms
+2026-05-31 14:52:01.096 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/api/Product/search?name=My&page=1&pageSize=10 - null null
+2026-05-31 14:52:01.568 +05:30 [INF] Executing endpoint 'API.Controllers.ProductController.GetProductsByName (API)'
+2026-05-31 14:52:01.665 +05:30 [INF] Route matched with {action = "GetProductsByName", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[DTOModel.ApiResponse] GetProductsByName(System.String, Int32, Int32) on controller API.Controllers.ProductController (API).
+2026-05-31 14:52:02.377 +05:30 [INF] Executed action API.Controllers.ProductController.GetProductsByName (API) in 702.6695ms
+2026-05-31 14:52:02.384 +05:30 [INF] Executed endpoint 'API.Controllers.ProductController.GetProductsByName (API)'
+2026-05-31 14:52:02.431 +05:30 [ERR] Unhandled exception occurred.
+System.Exception: Testing Serilog Logging
+   at API.Controllers.ProductController.GetProductsByName(String name, Int32 page, Int32 pageSize) in D:\Employee\Product_CRN\ProductSolution\Product\Controllers\ProductController.cs:line 48
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at API.Middleware.ExceptionMiddleware.Invoke(HttpContext context) in D:\Employee\Product_CRN\ProductSolution\Product\Middleware\ExceptionMiddleware.cs:line 23
+2026-05-31 14:52:02.575 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/api/Product/search?name=My&page=1&pageSize=10 - 500 null application/json; charset=utf-8 1479.3246ms
+2026-05-31 14:54:24.907 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/api/Product/search?name=My&page=1&pageSize=10 - null null
+2026-05-31 14:54:24.979 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '31/05/2026 09:24:20', Current time (UTC): '31/05/2026 09:24:24'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-31 14:54:24.999 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '31/05/2026 09:24:20', Current time (UTC): '31/05/2026 09:24:24'.
+2026-05-31 14:54:25.013 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-05-31 14:54:25.035 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2026-05-31 14:54:25.038 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/api/Product/search?name=My&page=1&pageSize=10 - 401 0 null 139.4453ms
+2026-05-31 14:54:52.269 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/api/Product/search?name=My&page=1&pageSize=10 - null null
+2026-05-31 14:54:52.294 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '31/05/2026 09:24:20', Current time (UTC): '31/05/2026 09:24:52'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-31 14:54:52.304 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '31/05/2026 09:24:20', Current time (UTC): '31/05/2026 09:24:52'.
+2026-05-31 14:54:52.309 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-05-31 14:54:52.311 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2026-05-31 14:54:52.313 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/api/Product/search?name=My&page=1&pageSize=10 - 401 0 null 52.7312ms
+2026-05-31 14:54:55.765 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/api/Product/search?name=My&page=1&pageSize=10 - null null
+2026-05-31 14:54:55.809 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '31/05/2026 09:24:20', Current time (UTC): '31/05/2026 09:24:55'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-31 14:54:55.818 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '31/05/2026 09:24:20', Current time (UTC): '31/05/2026 09:24:55'.
+2026-05-31 14:54:55.823 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-05-31 14:54:55.826 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2026-05-31 14:54:55.829 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/api/Product/search?name=My&page=1&pageSize=10 - 401 0 null 64.7158ms
+2026-05-31 14:55:15.584 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7087/api/Auth/Login - multipart/form-data; boundary=----WebKitFormBoundary4Ag2ZlAWUAUpO5qa 258
+2026-05-31 14:55:15.594 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '31/05/2026 09:24:20', Current time (UTC): '31/05/2026 09:25:15'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-31 14:55:15.608 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '31/05/2026 09:24:20', Current time (UTC): '31/05/2026 09:25:15'.
+2026-05-31 14:55:15.613 +05:30 [INF] Executing endpoint 'API.Controllers.AuthController.Login (API)'
+2026-05-31 14:55:15.636 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[DTOModel.ApiResponse] Login(DTOModel.LoginRequestDto) on controller API.Controllers.AuthController (API).
+2026-05-31 14:55:19.182 +05:30 [INF] Executed DbCommand (233ms) [Parameters=[@__dto_PhoneNumber_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedOn], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PasswordHash], [u].[Phone], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Phone] = @__dto_PhoneNumber_0
+2026-05-31 14:55:19.268 +05:30 [INF] Executing ObjectResult, writing value of type 'DTOModel.ApiResponse'.
+2026-05-31 14:55:19.312 +05:30 [INF] Executed action API.Controllers.AuthController.Login (API) in 3671.9675ms
+2026-05-31 14:55:19.320 +05:30 [INF] Executed endpoint 'API.Controllers.AuthController.Login (API)'
+2026-05-31 14:55:19.345 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7087/api/Auth/Login - 200 null application/json; charset=utf-8 3761.3698ms
+2026-05-31 14:55:49.065 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7087/api/Auth/Login - multipart/form-data; boundary=----WebKitFormBoundaryiMhWmrxGox09R7c8 256
+2026-05-31 14:55:49.090 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '31/05/2026 09:24:20', Current time (UTC): '31/05/2026 09:25:49'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-31 14:55:49.098 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '31/05/2026 09:24:20', Current time (UTC): '31/05/2026 09:25:49'.
+2026-05-31 14:55:49.104 +05:30 [INF] Executing endpoint 'API.Controllers.AuthController.Login (API)'
+2026-05-31 14:55:49.107 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[DTOModel.ApiResponse] Login(DTOModel.LoginRequestDto) on controller API.Controllers.AuthController (API).
+2026-05-31 14:55:49.196 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__dto_PhoneNumber_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedOn], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PasswordHash], [u].[Phone], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Phone] = @__dto_PhoneNumber_0
+2026-05-31 14:55:50.255 +05:30 [INF] Executed DbCommand (208ms) [Parameters=[@__user_RoleId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[RoleName]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__user_RoleId_0
+2026-05-31 14:55:50.361 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__phone_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedOn], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PasswordHash], [u].[Phone], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Phone] = @__phone_0
+2026-05-31 14:55:50.373 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__user_RoleId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[RoleName]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__user_RoleId_0
+2026-05-31 14:55:50.396 +05:30 [INF] Executing ObjectResult, writing value of type 'DTOModel.ApiResponse'.
+2026-05-31 14:55:50.416 +05:30 [INF] Executed action API.Controllers.AuthController.Login (API) in 1305.0897ms
+2026-05-31 14:55:50.420 +05:30 [INF] Executed endpoint 'API.Controllers.AuthController.Login (API)'
+2026-05-31 14:55:50.425 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7087/api/Auth/Login - 200 null application/json; charset=utf-8 1368.9279ms
+2026-05-31 14:56:57.820 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7087/api/Auth/Login - multipart/form-data; boundary=----WebKitFormBoundaryAMKEkjes0ADuiMAO 256
+2026-05-31 14:56:57.880 +05:30 [INF] Executing endpoint 'API.Controllers.AuthController.Login (API)'
+2026-05-31 14:56:57.883 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[DTOModel.ApiResponse] Login(DTOModel.LoginRequestDto) on controller API.Controllers.AuthController (API).
+2026-05-31 14:56:58.001 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__dto_PhoneNumber_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedOn], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PasswordHash], [u].[Phone], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Phone] = @__dto_PhoneNumber_0
+2026-05-31 14:56:58.282 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__user_RoleId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[RoleName]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__user_RoleId_0
+2026-05-31 14:56:58.290 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__phone_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedOn], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PasswordHash], [u].[Phone], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Phone] = @__phone_0
+2026-05-31 14:56:58.299 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__user_RoleId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[RoleName]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__user_RoleId_0
+2026-05-31 14:56:58.308 +05:30 [INF] Executing ObjectResult, writing value of type 'DTOModel.ApiResponse'.
+2026-05-31 14:56:58.311 +05:30 [INF] Executed action API.Controllers.AuthController.Login (API) in 425.2211ms
+2026-05-31 14:56:58.315 +05:30 [INF] Executed endpoint 'API.Controllers.AuthController.Login (API)'
+2026-05-31 14:56:58.318 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7087/api/Auth/Login - 200 null application/json; charset=utf-8 498.1321ms
+2026-05-31 14:57:52.857 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/api/Product/search?name=My&page=1&pageSize=10 - null null
+2026-05-31 14:57:52.872 +05:30 [INF] Executing endpoint 'API.Controllers.ProductController.GetProductsByName (API)'
+2026-05-31 14:57:52.874 +05:30 [INF] Route matched with {action = "GetProductsByName", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[DTOModel.ApiResponse] GetProductsByName(System.String, Int32, Int32) on controller API.Controllers.ProductController (API).
+2026-05-31 14:57:52.964 +05:30 [INF] Executed action API.Controllers.ProductController.GetProductsByName (API) in 83.0153ms
+2026-05-31 14:57:52.967 +05:30 [INF] Executed endpoint 'API.Controllers.ProductController.GetProductsByName (API)'
+2026-05-31 14:57:53.009 +05:30 [ERR] Unhandled exception occurred.
+System.Exception: Testing Serilog Logging
+   at API.Controllers.ProductController.GetProductsByName(String name, Int32 page, Int32 pageSize) in D:\Employee\Product_CRN\ProductSolution\Product\Controllers\ProductController.cs:line 48
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at API.Middleware.ExceptionMiddleware.Invoke(HttpContext context) in D:\Employee\Product_CRN\ProductSolution\Product\Middleware\ExceptionMiddleware.cs:line 23
+2026-05-31 14:57:53.029 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/api/Product/search?name=My&page=1&pageSize=10 - 500 null application/json; charset=utf-8 175.3787ms
+2026-05-31 15:01:10.146 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/api/Product/search?name=My&page=1&pageSize=10 - null null
+2026-05-31 15:01:10.164 +05:30 [INF] Executing endpoint 'API.Controllers.ProductController.GetProductsByName (API)'
+2026-05-31 15:01:10.166 +05:30 [INF] Route matched with {action = "GetProductsByName", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[DTOModel.ApiResponse] GetProductsByName(System.String, Int32, Int32) on controller API.Controllers.ProductController (API).
+2026-05-31 15:01:10.232 +05:30 [INF] Executed action API.Controllers.ProductController.GetProductsByName (API) in 63.5993ms
+2026-05-31 15:01:10.236 +05:30 [INF] Executed endpoint 'API.Controllers.ProductController.GetProductsByName (API)'
+2026-05-31 15:01:10.279 +05:30 [ERR] Unhandled exception occurred.
+System.Exception: Testing Serilog Logging
+   at API.Controllers.ProductController.GetProductsByName(String name, Int32 page, Int32 pageSize) in D:\Employee\Product_CRN\ProductSolution\Product\Controllers\ProductController.cs:line 48
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at API.Middleware.ExceptionMiddleware.Invoke(HttpContext context) in D:\Employee\Product_CRN\ProductSolution\Product\Middleware\ExceptionMiddleware.cs:line 23
+2026-05-31 15:01:10.307 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/api/Product/search?name=My&page=1&pageSize=10 - 500 null application/json; charset=utf-8 163.5299ms
+2026-05-31 15:03:48.708 +05:30 [INF] User profile is available. Using 'C:\Users\thaku\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-31 15:03:49.705 +05:30 [INF] Now listening on: https://localhost:7087
+2026-05-31 15:03:49.708 +05:30 [INF] Now listening on: http://localhost:5042
+2026-05-31 15:03:49.990 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-31 15:03:49.993 +05:30 [INF] Hosting environment: Development
+2026-05-31 15:03:49.996 +05:30 [INF] Content root path: D:\Employee\Product_CRN\ProductSolution\Product
+2026-05-31 15:03:51.466 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/swagger/index.html - null null
+2026-05-31 15:03:52.889 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/swagger/index.html - 200 null text/html;charset=utf-8 1452.1961ms
+2026-05-31 15:03:52.911 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-31 15:03:52.910 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/_vs/browserLink - null null
+2026-05-31 15:03:52.958 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/_framework/aspnetcore-browser-refresh.js - 200 13742 application/javascript; charset=utf-8 52.1218ms
+2026-05-31 15:03:53.164 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/_vs/browserLink - 200 null text/javascript; charset=UTF-8 253.643ms
+2026-05-31 15:03:53.265 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/swagger/v1/swagger.json - null null
+2026-05-31 15:03:53.381 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 115.3154ms
+2026-05-31 15:04:29.494 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/api/Product/search?name=My&page=1&pageSize=10 - null null
+2026-05-31 15:04:29.914 +05:30 [INF] Executing endpoint 'API.Controllers.ProductController.GetProductsByName (API)'
+2026-05-31 15:04:30.014 +05:30 [INF] Route matched with {action = "GetProductsByName", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[DTOModel.ApiResponse] GetProductsByName(System.String, Int32, Int32) on controller API.Controllers.ProductController (API).
+2026-05-31 15:04:30.709 +05:30 [INF] Executed action API.Controllers.ProductController.GetProductsByName (API) in 683.9649ms
+2026-05-31 15:04:30.715 +05:30 [INF] Executed endpoint 'API.Controllers.ProductController.GetProductsByName (API)'
+2026-05-31 15:04:30.761 +05:30 [ERR] Unhandled exception occurred.
+System.Exception: Testing  error
+   at API.Controllers.ProductController.GetProductsByName(String name, Int32 page, Int32 pageSize) in D:\Employee\Product_CRN\ProductSolution\Product\Controllers\ProductController.cs:line 48
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at API.Middleware.ExceptionMiddleware.Invoke(HttpContext context) in D:\Employee\Product_CRN\ProductSolution\Product\Middleware\ExceptionMiddleware.cs:line 23
+2026-05-31 15:04:30.914 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/api/Product/search?name=My&page=1&pageSize=10 - 500 null application/json; charset=utf-8 1420.1786ms
+2026-05-31 15:11:40.480 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/api/Product/search?name=My&page=1&pageSize=10 - null null
+2026-05-31 15:11:40.588 +05:30 [INF] Executing endpoint 'API.Controllers.ProductController.GetProductsByName (API)'
+2026-05-31 15:11:40.591 +05:30 [INF] Route matched with {action = "GetProductsByName", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[DTOModel.ApiResponse] GetProductsByName(System.String, Int32, Int32) on controller API.Controllers.ProductController (API).
+2026-05-31 15:11:40.682 +05:30 [INF] Executed action API.Controllers.ProductController.GetProductsByName (API) in 87.357ms
+2026-05-31 15:11:40.685 +05:30 [INF] Executed endpoint 'API.Controllers.ProductController.GetProductsByName (API)'
+2026-05-31 15:11:40.722 +05:30 [ERR] Unhandled exception occurred.
+System.Exception: Testing  error
+   at API.Controllers.ProductController.GetProductsByName(String name, Int32 page, Int32 pageSize) in D:\Employee\Product_CRN\ProductSolution\Product\Controllers\ProductController.cs:line 48
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at API.Middleware.ExceptionMiddleware.Invoke(HttpContext context) in D:\Employee\Product_CRN\ProductSolution\Product\Middleware\ExceptionMiddleware.cs:line 23
+2026-05-31 15:11:40.736 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/api/Product/search?name=My&page=1&pageSize=10 - 500 null application/json; charset=utf-8 256.3061ms
+2026-05-31 15:14:32.750 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/api/Product/search?name=My&page=1&pageSize=10 - null null
+2026-05-31 15:14:32.788 +05:30 [INF] Executing endpoint 'API.Controllers.ProductController.GetProductsByName (API)'
+2026-05-31 15:14:32.791 +05:30 [INF] Route matched with {action = "GetProductsByName", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[DTOModel.ApiResponse] GetProductsByName(System.String, Int32, Int32) on controller API.Controllers.ProductController (API).
+2026-05-31 15:14:32.875 +05:30 [INF] Executed action API.Controllers.ProductController.GetProductsByName (API) in 77.4899ms
+2026-05-31 15:14:32.879 +05:30 [INF] Executed endpoint 'API.Controllers.ProductController.GetProductsByName (API)'
+2026-05-31 15:14:32.939 +05:30 [ERR] Unhandled exception occurred.
+System.Exception: Testing  error
+   at API.Controllers.ProductController.GetProductsByName(String name, Int32 page, Int32 pageSize) in D:\Employee\Product_CRN\ProductSolution\Product\Controllers\ProductController.cs:line 48
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at API.Middleware.ExceptionMiddleware.Invoke(HttpContext context) in D:\Employee\Product_CRN\ProductSolution\Product\Middleware\ExceptionMiddleware.cs:line 23
+2026-05-31 15:14:32.973 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/api/Product/search?name=My&page=1&pageSize=10 - 500 null application/json; charset=utf-8 223.9532ms

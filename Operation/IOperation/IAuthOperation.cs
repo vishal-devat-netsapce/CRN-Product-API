@@ -1,5 +1,4 @@
 ﻿using DTOModel;
-using DTOModels.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +10,7 @@ namespace Operation
     public interface IAuthOperation
     {
         Task<ApiResponse> Login(LoginRequestDto dto);
+        Task<ApiResponse> AddUser(AddUserDTO dto);
+
     }
 }

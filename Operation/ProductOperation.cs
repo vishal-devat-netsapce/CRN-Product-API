@@ -1,43 +1,33 @@
-﻿using Operation.IOperation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using DTOModel;
+using Microsoft.Extensions.Logging;
 using Repository;
-using System.Threading.Tasks;
-using DTOModels.Response;
-using DTOModel;
 
 namespace Operation
 {
     public class ProductOperation : IProductOperation
     {
         private readonly IProductRepository _productRepository;
-        public ProductOperation(IProductRepository productRepository) 
+        private readonly ILogger<ProductOperation> _logger;
+
+        public ProductOperation(
+            IProductRepository productRepository,
+            ILogger<ProductOperation> logger)
         {
             _productRepository = productRepository;
+            _logger = logger;
         }
 
-        public async Task<ApiResponse> AddProduct(AddProductDTO productDTO) 
+        public async Task<ApiResponse> AddProduct(AddProductDTO productDTO)
         {
             try
             {
                 return await _productRepository.AddProduct(productDTO);
-
-                //if (data == null)
-                //{
-                //    return new ApiResponse("400",false,null,"Failed to add product.");
-                //}
-                //else { 
-                //    return new ApiResponse("200", true, data, "Product added successfully.");
-                //}
             }
             catch (Exception ex)
             {
-                //return await _productRepository.AddProduct(productDTO);
-                return new ApiResponse("500", false, null, "An error occurred while adding the product." + ex.InnerException?.Message ?? ex.Message);
+                _logger.LogError(ex, "Error occurred while adding product.");
+                throw;
             }
-
         }
 
         public async Task<ApiResponse> UpdateProduct(UpdateProductDTO updateDto)
@@ -45,65 +35,65 @@ namespace Operation
             try
             {
                 return await _productRepository.UpdateProduct(updateDto);
-
-                //if (data == null)
-                //{
-                //    return new ApiResponse("400",false,null,"Failed to add product.");
-                //}
-                //else { 
-                //    return new ApiResponse("200", true, data, "Product added successfully.");
-                //}
             }
             catch (Exception ex)
             {
-                return new ApiResponse("500", false, null,"An error occurred during updating the product." +ex.Message);
-            };
+                _logger.LogError(ex, "Error occurred while updating product.");
+                throw;
+            }
         }
-
-      
 
         public async Task<ApiResponse> GetProductById(int ProductId)
         {
             try
             {
                 return await _productRepository.GetProductById(ProductId);
-
-                //if (data == null)
-                //{
-                //    return new ApiResponse("400",false,null,"Failed to add product.");
-                //}
-                //else { 
-                //    return new ApiResponse("200", true, data, "Product added successfully.");
-                //}
             }
             catch (Exception ex)
             {
-                return new ApiResponse("500", false, null, "An error occurred while fetching the product by productId." + ex.InnerException?.Message ?? ex.Message);
+                _logger.LogError(ex.Message,"Error occurred while fetching product. ProductId: {ProductId}",
+                    ProductId);
+                throw;
             }
-            ;
         }
 
-        public async Task<ApiResponse> GetAllProductList()
+        public async Task<ApiResponse> GetAllProductList(int page, int pageSize)
         {
             try
             {
-                return await _productRepository.GetProductLisr();
-
-                //if (data == null)
-                //{
-                //    return new ApiResponse("400",false,null,"Failed to add product.");
-                //}
-                //else { 
-                //    return new ApiResponse("200", true, data, "Product added successfully.");
-                //}
+                return await _productRepository.GetAllProductList(page, pageSize);
             }
             catch (Exception ex)
             {
-                return new ApiResponse("500", false, null, "An error occurred while fetching the product list." + ex.InnerException?.Message ?? ex.Message);
+                _logger.LogError(ex, "Error occurred while fetching product list.");
+                throw;
             }
-            ;
         }
 
+        public async Task<ApiResponse> RemoveProductById(int ProductId)
+        {
+            try
+            {
+                return await _productRepository.RemoveProductById(ProductId);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex,"Error occurred while removing product. ProductId: {ProductId}",ProductId);
+                throw;
+            }
+        }
+
+        public async Task<ApiResponse> GetProductsByName(string? name, int page, int pageSize)
+        {
+            try
+            {
+                return await _productRepository.GetProductsByName(name, page, pageSize);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex,"Error occurred while searching products. SearchText: {Name}",name);
+                throw;
+            }
+        }
     }
-    
 }

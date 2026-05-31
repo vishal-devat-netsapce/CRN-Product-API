@@ -1,5 +1,4 @@
 ﻿using DTOModel;
-using DTOModels.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +12,8 @@ namespace Repository
         Task<ApiResponse> AddProduct(AddProductDTO dto);
         Task<ApiResponse> UpdateProduct(UpdateProductDTO updateProductDTO);
         Task<ApiResponse> GetProductById(int ProductId);
-        Task<ApiResponse> GetProductLisr();
+        Task<ApiResponse> GetAllProductList(int page,int pageSize);
+        Task<ApiResponse> RemoveProductById(int ProductId);
+        Task<ApiResponse> GetProductsByName(string? name, int page, int pageSize);
     }
 }

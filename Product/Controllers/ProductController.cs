@@ -1,11 +1,9 @@
 ﻿using DTOModel;
-using DTOModel;
-using DTOModels.Response;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Operation;
-using Operation.IOperation;
+
 namespace API.Controllers
 {
     [Route("api/[controller]")]
@@ -20,60 +18,41 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        //[AllowAnonymous]
-     
         public async Task<ApiResponse> AddProduct([FromForm]AddProductDTO productDTO)
         {
-           
                 return await _productOperation.AddProduct(productDTO);
-          
+        }
+
+        [HttpPut]
+        public async Task<ApiResponse> UpdateProduct([FromForm] UpdateProductDTO productDTO)
+        {
+            return await _productOperation.UpdateProduct(productDTO);
         }
 
         [HttpGet("{ProductId:int}")]
-        //[AllowAnonymous]
         public async Task<ApiResponse> RetrieveProductById(int ProductId)
-        {
-            //    try
-            //    {
-            return await _productOperation.GetProductById(ProductId);
-            //}
-            //catch (Exception ex)
-            //{
-            //    return new ApiResponse("500", false, null, "An error occurred during update the product." + ex.Message);
-
-            //}
+        {     
+            return await _productOperation.GetProductById(ProductId);          
         }
 
         [HttpGet]
-        //[AllowAnonymous]
-        public async Task<ApiResponse> RetrieveAllProduct()
+        public async Task<ApiResponse> RetrieveAllProduct( int page = 1,int pageSize = 10)
         {
-            //    try
-            //    {
-            return await _productOperation.GetAllProductList();
-            //}
-            //catch (Exception ex)
-            //{
-            //    return new ApiResponse("500", false, null, "An error occurred during update the product." + ex.Message);
-
-            //}
+            return await _productOperation.GetAllProductList(page, pageSize);
         }
 
-
-        [HttpPut]
-        //[AllowAnonymous]
-        public async Task<ApiResponse> UpdateProduct([FromForm] UpdateProductDTO productDTO)
+        [HttpGet("search")]
+        public async Task<ApiResponse> GetProductsByName(string? name, int page = 1, int pageSize = 10)
         {
-            //    try
-            //    {
-            return await _productOperation.UpdateProduct(productDTO);
-            //}
-            //catch (Exception ex)
-            //{
-            //    return new ApiResponse("500", false, null, "An error occurred during update the product." + ex.Message);
-
-            //}
+            //return await _productOperation.GetProductsByName(name, page, pageSize);
+            throw new Exception("Testing  error");
         }
 
+        [HttpDelete]
+        public async Task<ApiResponse> RemoveProductById(int ProductId)
+        {
+            throw new Exception("Testing Custom Middleware");
+            //return await _productOperation.RemoveProductById(ProductId);
+        }
     }
 }

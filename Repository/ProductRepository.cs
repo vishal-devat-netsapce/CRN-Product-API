@@ -1,5 +1,4 @@
 ﻿using DTOModel;
-using DTOModels.Response;
 using Microsoft.EntityFrameworkCore;
 using Model;
 using System;
@@ -18,16 +17,67 @@ namespace Repository
             _context = context;
         }
 
-        public async Task<ApiResponse> GetProductLisr()
+        public async Task<ApiResponse> GetProductsByName(string? name,int page,int pageSize)
         {
-            var data = await _context.Products.ToListAsync();
+            if (page <= 0)
+                page = 1;
+
+            if (pageSize <= 0)
+                pageSize = 10;
+
+            var query = _context.Products.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(name))
+            {
+                query = query.Where(x => x.ProductName.Contains(name));
+            }
+
+            var totalRecords = await query.CountAsync();
+
+            if (totalRecords == 0)
+            {
+                return new ApiResponse("404",false,null,"No products found.");
+            }
+
+            var products = await query
+                .AsNoTracking()
+                .OrderByDescending(x => x.Id)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            return new ApiResponse("200",true, products,"Products retrieved successfully.");
+        }
+
+        public async Task<ApiResponse> RemoveProductById(int ProductId)
+        {
+            var data = await _context.Products.Where(x => x.Id == ProductId).FirstOrDefaultAsync();
 
             if (data == null)
             {
-                return new ApiResponse("404", false, null, "Product list not found.");
+                return new ApiResponse("404", false, null, "Product not found on the be half of productId");
             }
 
-            return new ApiResponse("200", true, data, "Product list successfully found.");
+             _context.Products.Remove(data);
+            await _context.SaveChangesAsync();
+
+            return new ApiResponse("200", true, null, "Product successfully removed.");
+        }
+
+        public async Task<ApiResponse> GetAllProductList(int page,int pageSize)
+        {
+            if (page <= 0)
+                page = 1;
+
+            if (pageSize <= 0)
+                pageSize = 10;
+
+            var totalRecords = await _context.Products.CountAsync();
+
+            var products = await _context.Products.AsNoTracking().OrderByDescending(x => x.Id).Skip((page - 1) * pageSize)
+            .Take(pageSize).ToListAsync();
+
+            return new ApiResponse("200", true,products,"Products retrieved successfully.");
         }
 
         public async Task<ApiResponse> GetProductById(int ProductId)
@@ -44,13 +94,12 @@ namespace Repository
 
         public async Task<ApiResponse> UpdateProduct(UpdateProductDTO updateProductDTO)
         {
-            //try
-            //{
+            
 
                 bool isExist = await _context.Products.AnyAsync(x => x.ProductName == updateProductDTO.ProductName);
                 if (isExist == true)
                 {
-                    return new ApiResponse("400",false,null, "Product name already exists."); ;
+                    return new ApiResponse("400",false,null, "Product name already exists."); 
                 }
 
                 var product = await _context.Products.Where(x => x.Id == updateProductDTO.Id).FirstOrDefaultAsync();
@@ -73,17 +122,12 @@ namespace Repository
                 };
 
                 return new ApiResponse("200",true, result, "Product updated successfully.");
-            //}
-            //catch (Exception ex)
-            //{
-            //    return new ApiResponse("500",false, null, "An error occurred during updating product."+ex.Message);
-            //};
+          
         }
 
         public async Task<ApiResponse> AddProduct(AddProductDTO dto)
         {
-            //try
-            //{
+          
                 bool isExist = await _context.Products
                     .AnyAsync(x => x.ProductName == dto.ProductName);
 
@@ -113,11 +157,7 @@ namespace Repository
                 };
 
                 return new ApiResponse("200", true, result, "Product inserted successfully.");
-            //}
-            //catch (Exception ex)
-            //{
-            //    return new ApiResponse("500", false, null, "An error occcurred during inserting the product"+ex.Message);
-            //}
+          
         }
     }
 
