@@ -1,0 +1,149 @@
+2026-06-01 06:40:11.658 +05:30 [INF] User profile is available. Using 'C:\Users\thaku\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-01 06:40:12.843 +05:30 [INF] Now listening on: https://localhost:7087
+2026-06-01 06:40:12.848 +05:30 [INF] Now listening on: http://localhost:5042
+2026-06-01 06:40:13.241 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-01 06:40:13.274 +05:30 [INF] Hosting environment: Development
+2026-06-01 06:40:13.276 +05:30 [INF] Content root path: D:\Employee\Product_CRN\ProductSolution\Product
+2026-06-01 06:40:15.910 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/swagger/index.html - null null
+2026-06-01 06:40:16.535 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/swagger/index.html - 200 null text/html;charset=utf-8 673.865ms
+2026-06-01 06:40:16.570 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-01 06:40:16.570 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/_vs/browserLink - null null
+2026-06-01 06:40:16.597 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/_framework/aspnetcore-browser-refresh.js - 200 13742 application/javascript; charset=utf-8 26.2857ms
+2026-06-01 06:40:16.679 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/_vs/browserLink - 200 null text/javascript; charset=UTF-8 109.246ms
+2026-06-01 06:40:16.763 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/swagger/v1/swagger.json - null null
+2026-06-01 06:40:16.821 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 57.685ms
+2026-06-01 06:40:39.333 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7087/api/Auth/Login - multipart/form-data; boundary=----WebKitFormBoundaryTRBvvB5lJpqbykci 256
+2026-06-01 06:40:39.575 +05:30 [INF] Executing endpoint 'API.Controllers.AuthController.Login (API)'
+2026-06-01 06:40:39.684 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[DTOModel.ApiResponse] Login(DTOModel.LoginRequestDto) on controller API.Controllers.AuthController (API).
+2026-06-01 06:40:43.689 +05:30 [INF] Executed DbCommand (174ms) [Parameters=[@__dto_PhoneNumber_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedOn], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PasswordHash], [u].[Phone], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Phone] = @__dto_PhoneNumber_0
+2026-06-01 06:40:44.874 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__user_RoleId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[RoleName]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__user_RoleId_0
+2026-06-01 06:40:44.954 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__phone_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedOn], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PasswordHash], [u].[Phone], [u].[RoleId]
+FROM [Users] AS [u]
+WHERE [u].[Phone] = @__phone_0
+2026-06-01 06:40:44.968 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__user_RoleId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[RoleName]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__user_RoleId_0
+2026-06-01 06:40:45.060 +05:30 [INF] Executing ObjectResult, writing value of type 'DTOModel.ApiResponse'.
+2026-06-01 06:40:45.112 +05:30 [INF] Executed action API.Controllers.AuthController.Login (API) in 5417.3933ms
+2026-06-01 06:40:45.118 +05:30 [INF] Executed endpoint 'API.Controllers.AuthController.Login (API)'
+2026-06-01 06:40:45.142 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7087/api/Auth/Login - 200 null application/json; charset=utf-8 5809.7309ms
+2026-06-01 06:42:28.120 +05:30 [INF] User profile is available. Using 'C:\Users\thaku\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-01 06:42:29.017 +05:30 [INF] Now listening on: https://localhost:7087
+2026-06-01 06:42:29.020 +05:30 [INF] Now listening on: http://localhost:5042
+2026-06-01 06:42:29.277 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-01 06:42:29.280 +05:30 [INF] Hosting environment: Development
+2026-06-01 06:42:29.282 +05:30 [INF] Content root path: D:\Employee\Product_CRN\ProductSolution\Product
+2026-06-01 06:42:30.968 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/swagger/index.html - null null
+2026-06-01 06:42:31.509 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-01 06:42:31.509 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/_vs/browserLink - null null
+2026-06-01 06:42:31.515 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/swagger/index.html - 200 null text/html;charset=utf-8 566.067ms
+2026-06-01 06:42:31.577 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/_framework/aspnetcore-browser-refresh.js - 200 13742 application/javascript; charset=utf-8 68.4568ms
+2026-06-01 06:42:31.760 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/_vs/browserLink - 200 null text/javascript; charset=UTF-8 251.8067ms
+2026-06-01 06:42:31.903 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/swagger/v1/swagger.json - null null
+2026-06-01 06:42:32.043 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 142.4539ms
+2026-06-01 06:42:50.692 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7087/api/Role - multipart/form-data; boundary=----WebKitFormBoundaryzZCN2mQjUNVJFHqu 141
+2026-06-01 06:42:51.244 +05:30 [INF] Executing endpoint 'API.Controllers.RoleController.AddRole (API)'
+2026-06-01 06:42:51.362 +05:30 [INF] Route matched with {action = "AddRole", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[DTOModel.ApiResponse] AddRole(DTOModel.RoleDTO) on controller API.Controllers.RoleController (API).
+2026-06-01 06:42:55.243 +05:30 [INF] Executed DbCommand (165ms) [Parameters=[@__roleDTO_RoleName_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Roles] AS [r]
+        WHERE [r].[RoleName] = @__roleDTO_RoleName_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-06-01 06:42:55.810 +05:30 [INF] Executed DbCommand (32ms) [Parameters=[@p0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Roles] ([RoleName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2026-06-01 06:42:55.916 +05:30 [INF] Executing ObjectResult, writing value of type 'DTOModel.ApiResponse'.
+2026-06-01 06:42:55.962 +05:30 [INF] Executed action API.Controllers.RoleController.AddRole (API) in 4587.0051ms
+2026-06-01 06:42:55.967 +05:30 [INF] Executed endpoint 'API.Controllers.RoleController.AddRole (API)'
+2026-06-01 06:42:55.995 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7087/api/Role - 200 null application/json; charset=utf-8 5302.566ms
+2026-06-01 06:43:13.327 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/api/Role - null null
+2026-06-01 06:43:13.346 +05:30 [INF] Executing endpoint 'API.Controllers.RoleController.GetAllRoles (API)'
+2026-06-01 06:43:13.364 +05:30 [INF] Route matched with {action = "GetAllRoles", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[DTOModel.ApiResponse] GetAllRoles() on controller API.Controllers.RoleController (API).
+2026-06-01 06:43:13.510 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[RoleName]
+FROM [Roles] AS [r]
+ORDER BY [r].[Id] DESC
+2026-06-01 06:43:13.530 +05:30 [INF] Executing ObjectResult, writing value of type 'DTOModel.ApiResponse'.
+2026-06-01 06:43:13.539 +05:30 [INF] Executed action API.Controllers.RoleController.GetAllRoles (API) in 171.306ms
+2026-06-01 06:43:13.543 +05:30 [INF] Executed endpoint 'API.Controllers.RoleController.GetAllRoles (API)'
+2026-06-01 06:43:13.547 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/api/Role - 200 null application/json; charset=utf-8 220.3069ms
+2026-06-01 06:46:20.613 +05:30 [INF] Request starting HTTP/2 PUT https://localhost:7087/api/Role - multipart/form-data; boundary=----WebKitFormBoundaryXHbQdhb6MlzxrPWw 231
+2026-06-01 06:46:20.666 +05:30 [INF] Executing endpoint 'API.Controllers.RoleController.UpdateRole (API)'
+2026-06-01 06:46:20.683 +05:30 [INF] Route matched with {action = "UpdateRole", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[DTOModel.ApiResponse] UpdateRole(DTOModel.UpdateRoleDTO) on controller API.Controllers.RoleController (API).
+2026-06-01 06:46:20.885 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[@__roleDTO_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[RoleName]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__roleDTO_Id_0
+2026-06-01 06:46:20.909 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__roleDTO_RoleName_0='?' (Size = 50), @__roleDTO_Id_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Roles] AS [r]
+        WHERE [r].[RoleName] = @__roleDTO_RoleName_0 AND [r].[Id] <> @__roleDTO_Id_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-06-01 06:46:20.916 +05:30 [INF] Executing ObjectResult, writing value of type 'DTOModel.ApiResponse'.
+2026-06-01 06:46:20.920 +05:30 [INF] Executed action API.Controllers.RoleController.UpdateRole (API) in 232.6665ms
+2026-06-01 06:46:20.924 +05:30 [INF] Executed endpoint 'API.Controllers.RoleController.UpdateRole (API)'
+2026-06-01 06:46:20.927 +05:30 [INF] Request finished HTTP/2 PUT https://localhost:7087/api/Role - 200 null application/json; charset=utf-8 329.7013ms
+2026-06-01 06:46:34.111 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/api/Role/4 - null null
+2026-06-01 06:46:34.127 +05:30 [INF] Executing endpoint 'API.Controllers.RoleController.GetRoleById (API)'
+2026-06-01 06:46:34.142 +05:30 [INF] Route matched with {action = "GetRoleById", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[DTOModel.ApiResponse] GetRoleById(Int32) on controller API.Controllers.RoleController (API).
+2026-06-01 06:46:34.168 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__roleId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[RoleName]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__roleId_0
+2026-06-01 06:46:34.174 +05:30 [INF] Executing ObjectResult, writing value of type 'DTOModel.ApiResponse'.
+2026-06-01 06:46:34.177 +05:30 [INF] Executed action API.Controllers.RoleController.GetRoleById (API) in 30.7712ms
+2026-06-01 06:46:34.184 +05:30 [INF] Executed endpoint 'API.Controllers.RoleController.GetRoleById (API)'
+2026-06-01 06:46:34.189 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/api/Role/4 - 200 null application/json; charset=utf-8 78.4519ms
+2026-06-01 06:46:43.058 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:7087/api/Role/4 - null null
+2026-06-01 06:46:43.102 +05:30 [INF] Executing endpoint 'API.Controllers.RoleController.DeleteRole (API)'
+2026-06-01 06:46:43.123 +05:30 [INF] Route matched with {action = "DeleteRole", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[DTOModel.ApiResponse] DeleteRole(Int32) on controller API.Controllers.RoleController (API).
+2026-06-01 06:46:43.168 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__roleId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[RoleName]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__roleId_0
+2026-06-01 06:46:43.202 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[@__roleId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[RoleId] = @__roleId_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-06-01 06:46:43.287 +05:30 [INF] Executed DbCommand (41ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Roles]
+OUTPUT 1
+WHERE [Id] = @p0;
+2026-06-01 06:46:43.310 +05:30 [INF] Executing ObjectResult, writing value of type 'DTOModel.ApiResponse'.
+2026-06-01 06:46:43.314 +05:30 [INF] Executed action API.Controllers.RoleController.DeleteRole (API) in 174.8684ms
+2026-06-01 06:46:43.318 +05:30 [INF] Executed endpoint 'API.Controllers.RoleController.DeleteRole (API)'
+2026-06-01 06:46:43.320 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:7087/api/Role/4 - 200 null application/json; charset=utf-8 261.6713ms
+2026-06-01 06:46:53.430 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7087/api/Role/4 - null null
+2026-06-01 06:46:53.440 +05:30 [INF] Executing endpoint 'API.Controllers.RoleController.GetRoleById (API)'
+2026-06-01 06:46:53.443 +05:30 [INF] Route matched with {action = "GetRoleById", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[DTOModel.ApiResponse] GetRoleById(Int32) on controller API.Controllers.RoleController (API).
+2026-06-01 06:46:53.463 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__roleId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[RoleName]
+FROM [Roles] AS [r]
+WHERE [r].[Id] = @__roleId_0
+2026-06-01 06:46:53.468 +05:30 [INF] Executing ObjectResult, writing value of type 'DTOModel.ApiResponse'.
+2026-06-01 06:46:53.471 +05:30 [INF] Executed action API.Controllers.RoleController.GetRoleById (API) in 16.2907ms
+2026-06-01 06:46:53.475 +05:30 [INF] Executed endpoint 'API.Controllers.RoleController.GetRoleById (API)'
+2026-06-01 06:46:53.479 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7087/api/Role/4 - 200 null application/json; charset=utf-8 50.2709ms

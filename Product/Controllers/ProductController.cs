@@ -51,8 +51,8 @@ namespace API.Controllers
         [HttpDelete]
         public async Task<ApiResponse> RemoveProductById(int ProductId)
         {
-            throw new Exception("Testing Custom Middleware");
-            //return await _productOperation.RemoveProductById(ProductId);
+            
+            return await _productOperation.RemoveProductById(ProductId);
         }
     }
 }

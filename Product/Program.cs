@@ -97,6 +97,9 @@ builder.Services.AddTransient<IAuthRepository, AuthRepository>();
 builder.Services.AddTransient<IProductOperation, ProductOperation>();
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
 
+builder.Services.AddTransient<IRoleOperation, RoleOperation>();
+builder.Services.AddTransient<IRoleRepository, RoleRepository>();
+
 builder.Services.AddTransient<IItemOperation, ItemOperation>();
 builder.Services.AddTransient<IItemRepository, ItemRepository>();
 
